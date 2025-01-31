@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builds Data</title>
+    <link rel="stylesheet" href="home/home-style.css">
+    
+    <!-- Include Flatpickr CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+    <!-- Include DataTables CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/jquery.dataTables.min.js"></script>
+    
+  </head>
+  <body>
+  
+    <h3>Builds Data from PostgreSQL</h3>
+  
+    <!-- Date Filter Section -->
+    <div class="date-filter">
+      <label for="from-date">From Date:</label>
+      <input type="text" id="from-date">
+      <label for="end-date">End Date:</label>
+      <input type="text" id="end-date">
+      <button onclick="filterByDateRange()">Filter</button>
+      <button onclick="resetDateFilters()">Reset Filter</button> <!-- Reset button -->
+    </div>
+  
+    <!-- Job Filter Section -->
+    <div class="job-filter">
+      <label for="job-select">Filter by Job:</label>
+      <select id="job-select" onchange="filterByJob()">
+        <option value="">All Jobs</option>
+        <option value="com.seeburger.dt.it.gerrit-manual">com.seeburger.dt.it.gerrit-manual</option>
+        <option value="com.seeburger.dt.it.nightly-db-mssql">com.seeburger.dt.it.nightly-db-mssql</option>        
+        <option value="com.seeburger.dt.it.nightly-db-oracle">com.seeburger.dt.it.nightly-db-oracle</option>
+        <option value="com.seeburger.dt.it.verify-bis">com.seeburger.dt.it.verify-bis</option>
+
+      </select>
+    </div>
+  
+    <!-- Table to display data -->
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Build Number</th>
+          <th>Start Date</th>
+          <th>Finish Date</th>
+          <th>Duration</th>
+          <th>Duration</th>
+          <th>Details</th> 
+          <th>Test Count</th> <!-- New column -->
+          <th>Status</th> <!-- New column -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be populated by JavaScript -->
+      </tbody>
+    </table>
+    <div class="pagination" id="pagination-container">
+      <!-- Page numbers will be dynamically added here -->
+    </div>
+    <h3>Most Frequent Tests</h3>
+<table id="tests-table">
+  <thead>
+    <tr>
+      <th>Test Name</th>
+      <th>Occurrences</th>
+      <th>class</th>
+      <th>packege</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Data will be populated by JavaScript -->
+  </tbody>
+</table>
+  
+<div class="pagination" id="pagination-container">
+  <!-- Page numbers will be dynamically added here -->
+</div>
+
+    <p>Current Time: <span id="time"></span></p>
+    
+    <!-- JavaScript files -->
+    <script src="main.js"></script>
+    <script src="home/chart.js"></script>
+  
+  </body>
+  </html>
+  

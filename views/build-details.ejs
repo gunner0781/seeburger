@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Details</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Link your CSS -->
+  <style>
+    /* Add default styles if no external CSS file is provided */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Build Details</h1>
+  <p><strong>Build Number:</strong> <%= buildDetails.buildnumber %></p>
+  <p><strong>Start Date:</strong> <%= buildDetails.startdate %></p>
+  <p><strong>Finish Date:</strong> <%= buildDetails.finishdate %></p>
+  <p><strong>Duration:</strong> <%= buildDetails.duration %></p>
+
+  <h2>Tests</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Test Name</th>
+        <th>Test Class</th>
+        <th>Test Package</th>
+        <th>Test Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tests.forEach(test => { %>
+        <tr>
+          <td>
+            <!-- Make test name a link -->
+            <a href="/test/<%= test.testname %>"><%= test.testname %></a>
+          </td>
+          <td><%= test.testclass %></td>
+          <td><%= test.testpackage %></td>
+          <td><%= test.test_count %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Details</title>
+</head>
+<body>
+  <h1>Test Details</h1>
+  <p><strong>Test Name:</strong> <%= testDetails.testname %></p>
+  <p><strong>Build Number:</strong> <%= testDetails.buildnumber %></p>
+  <p><strong>Jenkins Link:</strong> 
+    <a href="https://build.seeburger.de/build/job/<%= encodeURIComponent(testDetails.buildname) %>/<%= encodeURIComponent(testDetails.buildnumber) %>/testngreports/<%= encodeURIComponent(testDetails.testclass) %>/<%= encodeURIComponent(testDetails.testname) %>/" 
+       target="_blank">
+      View Test in Jenkins
+    </a>
+  </p>
+
+
+  <a href="/build/<%= testDetails.buildnumber %>">Back to Build Details</a>
+</body>
+</html>

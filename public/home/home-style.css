@@ -1,0 +1,163 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Date Filter Styling */
+.date-filter {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.date-filter label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.date-filter input {
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.date-filter button {
+  background-color: #e4101b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.date-filter button:hover {
+  background-color: #e4101b;
+}
+
+/* Job Filter Styling */
+.job-filter {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.job-filter label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.job-filter select {
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Table Styling */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e6e6e6;
+}
+
+td {
+  word-wrap: break-word;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+
+  .date-filter input, .date-filter button, .job-filter select {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* Styling for pagination buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  background-color: rgb(233, 23, 8);
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+}
+
+.pagination button:hover {
+  background-color: rgb(200, 50, 50);
+}
+
+/* Optional styling for the dots if needed */
+span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.page-button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.page-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.page-button:hover {
+  background-color: #ddd;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="index/style.css">
+</head>
+
+<body>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="login-form">
+        <h1>Login</h1>  
+        <h2>This is still in early development</h2>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error" style="color: red; display: none;">Incorrect username or password. Please try again.</p>
+    </div>
+
+    <script src="index/login.js"></script>
+</body>
+
+</html>
